@@ -197,7 +197,7 @@ export default function Quiz() {
             <button
               onClick={goForward}
               disabled={!canAdvance}
-              className={`flex-1 flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full bg-gradient-to-r from-purple-dark via-purple to-purple-light font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-30 disabled:hover:scale-100 disabled:cursor-not-allowed cursor-pointer ${
+              className={`flex-1 flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full gradient-purple font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-30 disabled:hover:scale-100 disabled:cursor-not-allowed cursor-pointer ${
                 step === STEPS.length - 1 ? "glow-purple" : ""
               }`}
             >

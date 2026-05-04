@@ -72,6 +72,58 @@ body {
   box-shadow: 0 0 40px rgba(168, 85, 247, 0.4), 0 0 100px rgba(168, 85, 247, 0.15), 0 0 0 1px rgba(168, 85, 247, 0.5);
 }
 
+/* ---------------------------------------------------------------
+   Bulletproof gradient utilities (Tailwind v4 `bg-linear-*` is
+   unreliable with custom theme colors — these always render).
+---------------------------------------------------------------- */
+.gradient-purple   { background-image: linear-gradient(to right, #7c3aed 0%, #a855f7 50%, #c084fc 100%); }
+.gradient-purple-d { background-image: linear-gradient(to right, #7c3aed 0%, #a855f7 100%); }
+.gradient-purple-br{ background-image: linear-gradient(to bottom right, #7c3aed 0%, #a855f7 50%, #c084fc 100%); }
+.gradient-card-br  { background-image: linear-gradient(to bottom right, rgba(124,58,237,0.30), #111114 50%, #141418 100%); }
+.gradient-purple-radial { background-image: radial-gradient(circle at 30% 20%, #c084fc 0%, #a855f7 40%, #7c3aed 100%); }
+
+/* ---------------------------------------------------------------
+   Opacity-modifier utilities for custom theme colors.
+   Tailwind v4 doesn't auto-generate `bg-purple/10` etc. for custom
+   `--color-*` tokens, so we declare them explicitly here.
+---------------------------------------------------------------- */
+/* purple */
+.bg-purple\/5     { background-color: rgb(168 85 247 / 0.05); }
+.bg-purple\/10    { background-color: rgb(168 85 247 / 0.10); }
+.bg-purple\/15    { background-color: rgb(168 85 247 / 0.15); }
+.bg-purple\/20    { background-color: rgb(168 85 247 / 0.20); }
+.border-purple\/20 { border-color: rgb(168 85 247 / 0.20); }
+.border-purple\/25 { border-color: rgb(168 85 247 / 0.25); }
+.border-purple\/30 { border-color: rgb(168 85 247 / 0.30); }
+.border-purple\/40 { border-color: rgb(168 85 247 / 0.40); }
+.border-purple\/50 { border-color: rgb(168 85 247 / 0.50); }
+.border-purple\/60 { border-color: rgb(168 85 247 / 0.60); }
+.border-purple\/80 { border-color: rgb(168 85 247 / 0.80); }
+.ring-purple\/30   { --tw-ring-color: rgb(168 85 247 / 0.30); }
+.shadow-purple\/20 { --tw-shadow-color: rgb(168 85 247 / 0.20); }
+.shadow-purple\/25 { --tw-shadow-color: rgb(168 85 247 / 0.25); }
+.shadow-purple\/30 { --tw-shadow-color: rgb(168 85 247 / 0.30); }
+.from-purple-dark\/20 { --tw-gradient-from: rgb(124 58 237 / 0.20) var(--tw-gradient-from-position); --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-from), var(--tw-gradient-to, transparent)); }
+.from-purple-dark\/30 { --tw-gradient-from: rgb(124 58 237 / 0.30) var(--tw-gradient-from-position); --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-from), var(--tw-gradient-to, transparent)); }
+.via-purple\/10    { --tw-gradient-via: rgb(168 85 247 / 0.10) var(--tw-gradient-via-position); --tw-gradient-via-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to, transparent); --tw-gradient-stops: var(--tw-gradient-via-stops); }
+.via-purple\/30    { --tw-gradient-via: rgb(168 85 247 / 0.30) var(--tw-gradient-via-position); --tw-gradient-via-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to, transparent); --tw-gradient-stops: var(--tw-gradient-via-stops); }
+.to-purple-light\/20 { --tw-gradient-to: rgb(192 132 252 / 0.20) var(--tw-gradient-to-position); }
+.border-purple-light\/20 { border-color: rgb(192 132 252 / 0.20); }
+/* card */
+.bg-card\/60       { background-color: rgb(17 17 20 / 0.60); }
+.bg-card\/80       { background-color: rgb(17 17 20 / 0.80); }
+/* border (zinc-800) */
+.bg-border\/40     { background-color: rgb(39 39 42 / 0.40); }
+.bg-border\/50     { background-color: rgb(39 39 42 / 0.50); }
+.border-border\/20 { border-color: rgb(39 39 42 / 0.20); }
+.border-border\/30 { border-color: rgb(39 39 42 / 0.30); }
+.border-border\/50 { border-color: rgb(39 39 42 / 0.50); }
+.border-border\/60 { border-color: rgb(39 39 42 / 0.60); }
+/* muted (zinc-400) */
+.text-muted\/30    { color: rgb(161 161 170 / 0.30); }
+.text-muted\/40    { color: rgb(161 161 170 / 0.40); }
+.text-muted\/50    { color: rgb(161 161 170 / 0.50); }
+
 /* Background effects */
 .bg-radial-top {
   background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(168, 85, 247, 0.08), transparent);

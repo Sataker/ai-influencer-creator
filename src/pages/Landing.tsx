@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Sparkles, Zap, Image, MessageCircle, Users, TrendingUp, Clock, ArrowRight, ChevronDown, Star } from "lucide-react";
+import { Sparkles, Zap, Image, MessageCircle, Users, TrendingUp, Clock, ArrowRight, ChevronDown, Star, Heart, MessageSquare, Bookmark, BadgeCheck } from "lucide-react";
 import SectionHeader from "../components/SectionHeader";
 
 const FEATURES = [
@@ -62,7 +62,7 @@ export default function Landing() {
             <div className="flex flex-col sm:flex-row items-start gap-4 mt-8">
               <button
                 onClick={() => nav("/quiz")}
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-purple-dark via-purple to-purple-light font-semibold text-base md:text-lg glow-purple hover:scale-105 active:scale-[0.98] hover:glow-purple-intense transition-all duration-300 cursor-pointer shadow-lg shadow-purple/25"
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-full gradient-purple font-semibold text-base md:text-lg glow-purple hover:scale-105 active:scale-[0.98] hover:glow-purple-intense transition-all duration-300 cursor-pointer shadow-lg shadow-purple/25"
               >
                 Criar meu Influenciador
                 <ArrowRight className="w-5 h-5" />
@@ -77,36 +77,81 @@ export default function Landing() {
             </div>
           </div>
 
-          {/* Right — Hero mockup */}
-          <div className="relative animate-fade-up stagger-2 mt-10 md:mt-0">
-            <div className="glass-elevated rounded-2xl p-4 glow-purple overflow-hidden md:overflow-visible">
-              <div className="aspect-square md:aspect-[3/4] rounded-xl bg-gradient-to-br from-purple-dark/30 via-card to-card-elevated flex items-center justify-center overflow-hidden">
-                <div className="text-center px-6">
-                  <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-purple-dark to-purple opacity-40 mb-5" />
-                  <p className="text-lg font-semibold mb-1">Seu avatar aparece aqui</p>
-                  <p className="text-muted text-sm">Gerado pela IA em segundos</p>
+          {/* Right — Hero mockup: Instagram-style profile card */}
+          <div className="relative animate-fade-up stagger-2 mt-10 md:mt-0 max-w-sm mx-auto md:max-w-md md:ml-auto w-full">
+            <div className="relative glass-elevated rounded-2xl glow-purple overflow-hidden">
+              {/* Header */}
+              <div className="flex items-center gap-3 p-4 border-b border-border/50">
+                <div className="w-11 h-11 rounded-full gradient-purple-br p-[2px]">
+                  <div className="w-full h-full rounded-full bg-card flex items-center justify-center text-base font-bold">
+                    L
+                  </div>
                 </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-1">
+                    <span className="text-sm font-semibold truncate">luna.ai</span>
+                    <BadgeCheck className="w-4 h-4 text-purple-light shrink-0" />
+                  </div>
+                  <p className="text-xs text-muted">Influenciadora · Sao Paulo</p>
+                </div>
+                <div className="text-xs font-semibold px-3 py-1.5 rounded-full bg-purple/15 text-purple-light border border-purple/30">
+                  Seguir
+                </div>
+              </div>
+
+              {/* Image area */}
+              <div className="relative aspect-[4/5] gradient-card-br overflow-hidden">
+                {/* abstract layered "photo" */}
+                <div className="absolute inset-0 bg-radial-top opacity-80" />
+                <div className="absolute -top-10 -left-10 w-48 h-48 rounded-full gradient-purple-d blur-3xl opacity-40" />
+                <div className="absolute -bottom-12 -right-8 w-56 h-56 rounded-full gradient-purple-d blur-3xl opacity-50" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-28 h-28 rounded-full gradient-purple-br shadow-2xl shadow-purple/40 ring-4 ring-white/10" />
+                </div>
+
+                {/* Floating engagement badge */}
+                <div className="absolute top-4 right-4 flex items-center gap-1.5 px-2.5 py-1.5 rounded-full glass text-[11px] font-semibold animate-float">
+                  <TrendingUp className="w-3 h-3 text-purple-light" />
+                  98% engajamento
+                </div>
+              </div>
+
+              {/* Action row */}
+              <div className="flex items-center justify-between px-4 py-3">
+                <div className="flex items-center gap-4">
+                  <Heart className="w-5 h-5 text-purple-light fill-purple-light/40" />
+                  <MessageSquare className="w-5 h-5 text-muted" />
+                </div>
+                <Bookmark className="w-5 h-5 text-muted" />
+              </div>
+
+              {/* Stats */}
+              <div className="px-4 pb-4">
+                <div className="flex items-center gap-1.5 text-sm">
+                  <span className="font-semibold">42.187</span>
+                  <span className="text-muted">curtidas</span>
+                </div>
+                <p className="text-sm mt-1">
+                  <span className="font-semibold mr-1.5">luna.ai</span>
+                  <span className="text-muted">Seu novo influenciador trabalhando 24/7 pela sua marca</span>
+                </p>
               </div>
             </div>
 
-            {/* Floating badges */}
-            <div className="hidden sm:block absolute -top-4 -right-4 glass rounded-xl px-4 py-2.5 shadow-card animate-float">
-              <div className="flex items-center gap-2 text-sm">
-                <Users className="w-4 h-4 text-purple" />
-                <span className="font-semibold">1.2M seguidores</span>
-              </div>
+            {/* Floating side badge */}
+            <div
+              className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 glass rounded-xl px-3 py-2.5 shadow-card animate-float items-center gap-2 text-xs"
+              style={{ animationDelay: "2s" }}
+            >
+              <Users className="w-3.5 h-3.5 text-purple" />
+              <span className="font-semibold">1.2M seguidores</span>
             </div>
-            <div className="hidden sm:block absolute -bottom-4 -left-4 glass rounded-xl px-4 py-2.5 shadow-card animate-float" style={{ animationDelay: "2s" }}>
-              <div className="flex items-center gap-2 text-sm">
-                <TrendingUp className="w-4 h-4 text-purple-light" />
-                <span className="font-semibold">98% engajamento</span>
-              </div>
-            </div>
-            <div className="hidden md:block absolute top-1/2 -right-8 glass rounded-xl px-4 py-2.5 shadow-card animate-float" style={{ animationDelay: "4s" }}>
-              <div className="flex items-center gap-2 text-sm">
-                <Clock className="w-4 h-4 text-purple-light" />
-                <span className="font-semibold">24h online</span>
-              </div>
+            <div
+              className="hidden md:flex absolute -right-4 top-8 glass rounded-xl px-3 py-2.5 shadow-card animate-float items-center gap-2 text-xs"
+              style={{ animationDelay: "4s" }}
+            >
+              <Clock className="w-3.5 h-3.5 text-purple-light" />
+              <span className="font-semibold">24h online</span>
             </div>
           </div>
         </div>
@@ -160,7 +205,7 @@ export default function Landing() {
           highlight="3 passos"
         />
         <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 relative">
-          <div className="hidden md:block absolute top-[40px] left-[16%] right-[16%] h-px bg-gradient-to-r from-transparent via-purple/30 to-transparent" />
+          <div className="hidden md:block absolute top-[40px] left-[16%] right-[16%] h-px bg-linear-to-r from-transparent via-purple/30 to-transparent" />
           {STEPS_DATA.map((s, i) => (
             <div key={s.num} className={`text-center animate-fade-up stagger-${i + 1}`}>
               <div className="w-12 h-12 mx-auto rounded-full bg-purple/20 border border-purple/40 flex items-center justify-center text-sm font-bold text-purple-light mb-4 relative z-10">
@@ -211,7 +256,7 @@ export default function Landing() {
           </p>
           <button
             onClick={() => nav("/quiz")}
-            className="inline-flex items-center gap-3 px-6 sm:px-8 py-4 rounded-full bg-gradient-to-r from-purple-dark via-purple to-purple-light font-semibold text-base sm:text-lg glow-purple hover:scale-105 active:scale-[0.98] hover:glow-purple-intense transition-all duration-300 cursor-pointer shadow-lg shadow-purple/25"
+            className="inline-flex items-center gap-3 px-6 sm:px-8 py-4 rounded-full gradient-purple font-semibold text-base sm:text-lg glow-purple hover:scale-105 active:scale-[0.98] hover:glow-purple-intense transition-all duration-300 cursor-pointer shadow-lg shadow-purple/25"
           >
             <Sparkles className="w-5 h-5" />
             Comecar agora
