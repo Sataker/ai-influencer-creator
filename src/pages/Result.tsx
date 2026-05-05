@@ -54,7 +54,7 @@ export default function Result() {
 
         {/* Image */}
         <div className="relative mb-8 animate-scale-in">
-          <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-purple-dark/20 via-purple/10 to-purple-light/20 rounded-3xl blur-2xl" />
+          <div className="absolute -inset-2 sm:-inset-4 bg-linear-to-r from-purple-dark/20 via-purple/10 to-purple-light/20 rounded-3xl blur-2xl" />
           <div className="relative glass-elevated rounded-2xl p-3 md:p-5 glow-purple">
             <div className="aspect-[3/4] rounded-xl overflow-hidden bg-card flex items-center justify-center">
               {imageUrl ? (
@@ -102,7 +102,7 @@ export default function Result() {
           </button>
           <button
             onClick={() => nav("/planos")}
-            className="flex items-center justify-center gap-2.5 py-3.5 rounded-full bg-gradient-to-r from-purple-dark via-purple to-purple-light font-semibold glow-purple hover:scale-[1.02] active:scale-[0.98] hover:glow-purple-intense transition-all duration-300 cursor-pointer"
+            className="flex items-center justify-center gap-2.5 py-3.5 rounded-full gradient-purple font-semibold glow-purple hover:scale-[1.02] active:scale-[0.98] hover:glow-purple-intense transition-all duration-300 cursor-pointer"
           >
             Ver planos <ArrowRight className="w-4 h-4" />
           </button>

@@ -7,7 +7,7 @@ interface Props {
 
 export default function SectionHeader({ preTitle, title, highlight, subtitle }: Props) {
   return (
-    <div className="text-center mb-8 sm:mb-12 md:mb-16">
+    <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12 md:mb-16 px-4">
       {preTitle && (
         <p className="text-sm text-purple-light font-semibold uppercase tracking-wider mb-4">
           {preTitle}

@@ -79,7 +79,7 @@ export default function Generating() {
             </button>
             <button
               onClick={() => window.location.reload()}
-              className="flex-1 py-3 rounded-full bg-gradient-to-r from-purple-dark to-purple font-semibold hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2"
+              className="flex-1 py-3 rounded-full gradient-purple-d font-semibold hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2"
             >
               <RefreshCw className="w-4 h-4" /> Tentar de novo
             </button>
@@ -96,7 +96,7 @@ export default function Generating() {
         <div className="w-20 h-20 sm:w-28 sm:h-28 mx-auto mb-6 sm:mb-10 relative">
           <div className="absolute inset-0 rounded-full border-2 border-purple/20 border-t-purple" style={{ animation: "spin 2s linear infinite" }} />
           <div className="absolute inset-2 rounded-full border-2 border-purple-light/20 border-b-purple-light" style={{ animation: "spin 3s linear infinite reverse" }} />
-          <div className="absolute inset-5 rounded-full bg-gradient-to-br from-purple-dark to-purple pulse-glow" />
+          <div className="absolute inset-5 rounded-full gradient-purple-d pulse-glow" />
         </div>
 
         <h1 className="text-2xl md:text-3xl font-bold mb-3 tracking-tight">
@@ -110,7 +110,7 @@ export default function Generating() {
         {/* Progress bar */}
         <div className="w-full h-2.5 bg-card/80 rounded-full overflow-hidden border border-border/30">
           <div
-            className="h-full bg-gradient-to-r from-purple-dark via-purple to-purple-light rounded-full transition-all duration-700 ease-out"
+            className="h-full gradient-purple rounded-full transition-all duration-700 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>

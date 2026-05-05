@@ -82,7 +82,7 @@ export default function Plans() {
               }`}
             >
               {plan.popular && (
-                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-5 py-1.5 bg-gradient-to-r from-purple-dark to-purple rounded-full text-xs font-semibold tracking-wider uppercase shadow-xl shadow-purple/30">
+                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-5 py-1.5 gradient-purple-d rounded-full text-xs font-semibold tracking-wider uppercase shadow-xl shadow-purple/30">
                   Mais popular
                 </span>
               )}
@@ -113,7 +113,7 @@ export default function Plans() {
                 onClick={() => handleSelect(plan.id)}
                 className={`mt-8 w-full py-3.5 rounded-full font-semibold transition-all duration-300 cursor-pointer text-center active:scale-[0.98] ${
                   plan.popular
-                    ? "bg-gradient-to-r from-purple-dark via-purple to-purple-light glow-purple hover:scale-[1.02] hover:glow-purple-intense"
+                    ? "gradient-purple glow-purple hover:scale-[1.02] hover:glow-purple-intense"
                     : "border border-purple/30 hover:border-purple/60 hover:bg-purple/5"
                 }`}
               >

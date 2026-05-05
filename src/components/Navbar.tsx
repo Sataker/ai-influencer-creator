@@ -29,7 +29,7 @@ export default function Navbar() {
         </button>
         <button
           onClick={() => nav("/quiz")}
-          className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-dark to-purple text-sm font-semibold hover:scale-105 active:scale-[0.98] transition-all duration-300 cursor-pointer shadow-lg shadow-purple/20"
+          className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full gradient-purple-d text-sm font-semibold hover:scale-105 active:scale-[0.98] transition-all duration-300 cursor-pointer shadow-lg shadow-purple/20"
         >
           <Sparkles className="w-3.5 h-3.5" />
           Criar agora

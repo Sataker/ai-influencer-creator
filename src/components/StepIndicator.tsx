@@ -17,9 +17,9 @@ export default function StepIndicator({ current, total, stepTitle }: Props) {
             key={i}
             className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${
               i < current
-                ? "bg-gradient-to-r from-purple to-purple-light"
+                ? "gradient-purple-d"
                 : i === current
-                ? "bg-gradient-to-r from-purple to-purple-light glow-purple"
+                ? "gradient-purple-d glow-purple"
                 : "bg-border/50"
             }`}
           />

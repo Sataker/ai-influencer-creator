@@ -35,7 +35,7 @@ export default function ColorPicker({ selected, onSelect }: Props) {
             <div
               className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full transition-all duration-200 ${
                 isSelected
-                  ? "ring-2 ring-purple ring-offset-2 ring-offset-bg"
+                  ? "ring-2 ring-purple ring-offset-2 ring-offset-[#09090b]"
                   : "border-2 border-border"
               }`}
               style={{ backgroundColor: c.value }}
