@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { Sparkles, Zap, Image, MessageCircle, Users, TrendingUp, Clock, ArrowRight, ChevronDown, Star, Heart, MessageSquare, Bookmark, BadgeCheck } from "lucide-react";
+import { Sparkles, Zap, Image as ImageIcon, MessageCircle, Users, TrendingUp, Clock, ArrowRight, ChevronDown, Star, Heart, MessageSquare, Bookmark, BadgeCheck } from "lucide-react";
 import SectionHeader from "../components/SectionHeader";
 
 const FEATURES = [
   {
-    icon: Image,
+    icon: ImageIcon,
     title: "Fotos Hiper-realistas",
     desc: "Ninguem vai saber que nao e uma pessoa real. Fotos em qualquer cenario, roupa ou pose que voce precisar.",
   },
@@ -185,7 +185,8 @@ export default function Landing() {
           {FEATURES.map((f, i) => (
             <div
               key={f.title}
-              className={`glass rounded-2xl p-7 md:p-9 group hover:shadow-card-hover hover:border-purple/30 hover:-translate-y-1 active:scale-[0.98] transition-all duration-300 animate-fade-up stagger-${i + 1}`}
+              className="glass rounded-2xl p-7 md:p-9 group hover:shadow-card-hover hover:border-purple/30 hover:-translate-y-1 active:scale-[0.98] transition-all duration-300 animate-fade-up"
+              style={{ animationDelay: `${(i + 1) * 0.1}s` }}
             >
               <div className="w-12 h-12 rounded-xl bg-purple/10 flex items-center justify-center mb-6">
                 <f.icon className="w-6 h-6 text-purple group-hover:text-purple-light transition-colors" />
@@ -207,7 +208,7 @@ export default function Landing() {
         <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 relative">
           <div className="hidden md:block absolute top-[40px] left-[16%] right-[16%] h-px bg-linear-to-r from-transparent via-purple/30 to-transparent" />
           {STEPS_DATA.map((s, i) => (
-            <div key={s.num} className={`text-center animate-fade-up stagger-${i + 1}`}>
+            <div key={s.num} className="text-center animate-fade-up" style={{ animationDelay: `${(i + 1) * 0.1}s` }}>
               <div className="w-12 h-12 mx-auto rounded-full bg-purple/20 border border-purple/40 flex items-center justify-center text-sm font-bold text-purple-light mb-4 relative z-10">
                 {s.num}
               </div>
@@ -227,7 +228,7 @@ export default function Landing() {
         />
         <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-5 md:gap-6">
           {TESTIMONIALS.map((t, i) => (
-            <div key={t.name} className={`glass rounded-2xl p-6 md:p-8 animate-fade-up stagger-${i + 1}`}>
+            <div key={t.name} className="glass rounded-2xl p-6 md:p-8 animate-fade-up" style={{ animationDelay: `${(i + 1) * 0.1}s` }}>
               <div className="flex gap-0.5 mb-4">
                 {Array.from({ length: t.stars }, (_, j) => (
                   <Star key={j} className="w-4 h-4 text-purple fill-purple" />

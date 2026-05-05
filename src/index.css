@@ -82,6 +82,23 @@ body {
 .gradient-card-br  { background-image: linear-gradient(to bottom right, rgba(124,58,237,0.30), #111114 50%, #141418 100%); }
 .gradient-purple-radial { background-image: radial-gradient(circle at 30% 20%, #c084fc 0%, #a855f7 40%, #7c3aed 100%); }
 
+/* Tailwind v4 ships .bg-linear-to-* but only sets --tw-gradient-position
+   without writing background-image, so multi-stop gradients render as
+   transparent. We force background-image to actually paint the gradient. */
+.bg-linear-to-r,
+.bg-linear-to-l,
+.bg-linear-to-t,
+.bg-linear-to-b,
+.bg-linear-to-tr,
+.bg-linear-to-tl,
+.bg-linear-to-br,
+.bg-linear-to-bl {
+  background-image: linear-gradient(var(--tw-gradient-position, to right), var(--tw-gradient-stops, var(--tw-gradient-from, transparent), var(--tw-gradient-to, transparent))) !important;
+}
+/* Also patch from-/via-/to- variants for hex/rgb shorthand */
+.from-transparent { --tw-gradient-from: transparent; --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-from), var(--tw-gradient-to, transparent)); }
+.to-transparent   { --tw-gradient-to: transparent; }
+
 /* ---------------------------------------------------------------
    Opacity-modifier utilities for custom theme colors.
    Tailwind v4 doesn't auto-generate `bg-purple/10` etc. for custom
